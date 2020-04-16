@@ -21,7 +21,7 @@
         app:ct_tabSelectScale="1.15"
         app:ct_tabSelectTextColor="#ff0000"
         app:ct_tabTextColor="#363636"
-        app:ct_tabTextSize="18sp"
+        app:ct_tabTextSize="15sp"
         app:ct_tabForeground="@drawable/ripper_colortrackitem"/>
 
     <androidx.viewpager.widget.ViewPager

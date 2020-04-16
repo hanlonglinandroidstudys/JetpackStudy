@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 
@@ -14,7 +15,7 @@ import androidx.fragment.app.Fragment
  * author: DragonForest
  * time: 2020/3/18
  */
-abstract class BaseFragment() : Fragment() {
+abstract class BaseFragment(var link: String) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -26,10 +27,14 @@ abstract class BaseFragment() : Fragment() {
                 container,
                 false
             ) as ViewGroup
+        setLink(v)
         addCustomView(inflater, v)
         return v
     }
 
+    private fun setLink(v: ViewGroup) {
+        v.findViewById<TextView>(R.id.tv_link).setText(link)
+    }
 
     private fun addCustomView(inflater: LayoutInflater, v: ViewGroup) {
         var content = v.findViewById<ConstraintLayout>(R.id.cl_content)
