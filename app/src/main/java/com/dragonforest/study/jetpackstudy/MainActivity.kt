@@ -3,6 +3,7 @@ package com.dragonforest.study.jetpackstudy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.dragonforest.study.jetpackstudy.fragments.lifecircle.FgLifecircle
 import com.dragonforest.study.jetpackstudy.fragments.livedata.FgLiveData
 import com.dragonforest.study.jetpackstudy.fragments.viewmodel.FgViewMode
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
     fun getFragmentsAndTitles(fgs: MutableList<Fragment>, titles: MutableList<String>) {
         fgs.add(FgViewMode())
         titles.add("数据绑定dataBinding")
+        fgs.add(FgLifecircle("https://developer.android.google.cn/topic/libraries/architecture/lifecycle#kotlin"))
+        titles.add("LifeCircle")
         fgs.add(FgLiveData(""))
         titles.add("LiveData")
     }
